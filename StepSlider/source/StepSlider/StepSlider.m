@@ -357,10 +357,7 @@ void withoutCAAnimation(withoutAnimationBlock code)
                 size = CGSizeMake([self roundForTextDrawing:maxWidth], CGFLOAT_MAX);
             }
             
-            CGFloat height = [self.labels[i] boundingRectWithSize:size
-                                                          options:NSStringDrawingUsesLineFragmentOrigin
-                                                       attributes:@{NSFontAttributeName : self.labelFont}
-                                                          context:nil].size.height;
+            CGFloat height = [self.labels[i] boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin context:nil].size.height;
             labelHeight = fmax(ceil(height), labelHeight);
         }
         return labelHeight;
@@ -620,7 +617,7 @@ void withoutCAAnimation(withoutAnimationBlock code)
     [self setNeedsLayout];
 }
 
-- (void)setLabels:(NSArray<NSString *> *)labels
+- (void)setLabels:(NSArray<NSAttributedString *> *)labels
 {
     NSAssert(labels.count != 1, @"Labels count can not be equal to 1!");
     if (_labels != labels) {

@@ -243,7 +243,7 @@
     static NSUInteger flag = 0;
     switch (flag % 3) {
         case 0:
-            self.sliderView.labels = @[@"First", @"Second", @"Third"];
+            self.sliderView.labels = @[[[NSAttributedString alloc]initWithString:@"First" attributes:@{NSForegroundColorAttributeName:UIColor.blueColor}],[[NSAttributedString alloc]initWithString:@"First" attributes:@{NSForegroundColorAttributeName:UIColor.redColor}],[[NSAttributedString alloc]initWithString:@"First" attributes:@{NSForegroundColorAttributeName:UIColor.greenColor}]];
             break;
         case 1:
             self.sliderView.labels = @[@"1", @"2", @"3", @"4", @"5"];
